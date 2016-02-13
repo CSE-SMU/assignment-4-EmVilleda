@@ -16,11 +16,3 @@ li input[type="checkbox"] {
 .normal {
 	font-weight: normal;
 }
-
-input.ng-invalid.ng-touched {
-    background-color: #FA787E;
-  }
-
-  input.ng-valid.ng-touched {
-    background-color: #78FA89;
-  }
