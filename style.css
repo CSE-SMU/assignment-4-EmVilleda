@@ -1,0 +1,26 @@
+li input[type="checkbox"] {
+  width: 50px;
+  padding-bottom: 100px;
+  float: left;
+}
+
+.task {
+	padding-left: 50px;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: #ddd;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
