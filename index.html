@@ -8,11 +8,6 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-light bg-faded">
- 		<div class="container">
-    		<a class="navbar-brand" href="#">My Personal ToDo App</a>
-  		</div>
-	</nav>
 	<br/>
   	<div class="container" ng-controller="TodoCtrl">
   		<div class="row">
@@ -34,16 +29,16 @@
     		</div>
 
     		<div class="col-sm-6">
-    			<h2>Add a New Item:</h2>
+    			<h2>Create a New Item:</h2>
 		    	<form>
 			        <div class="form-group row">
-			        	<input type="text" class="form-control" placeholder="Title..." ng-model="formTodoTitle" ng-model-instant required/>
+			        	<input type="text" class="form-control" placeholder="Title..." ng-model="formTodoTitle" ng-model-instant/>
 			        </div>
 			        <div class="form-group row">
-			        	<textarea class="form-control" ng-model="formTodoText" placeholder="Description..." ng-model-instant rows="3" required></textarea>
+			        	<textarea class="form-control" ng-model="formTodoText" placeholder="Description..." ng-model-instant rows="3"></textarea>
 			        </div>
 			        <div class="form-group row">
-			         	<input input="date" class="form-control" placeholder="Deadline (yyyy-MM-dd)..." ng-model="formTodoDeadline" min="2016-01-01" max="2018-12-31" ng-model-instant required/>
+			         	<input input="text" class="form-control" placeholder="Deadline (dd/mm/yy)..." ng-model="formTodoDeadline" ng-model-instant/>
 			        </div>
 			        <div class="form-group row">
 			        	<button class="btn btn-primary" ng-click="addTodo()">Add</button>

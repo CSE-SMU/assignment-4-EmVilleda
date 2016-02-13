@@ -1,8 +1,9 @@
 function TodoCtrl($scope) {
 	
 	$scope.todos = [
-		{title:'Z Task', text:'This is the A task', deadline:'2016-02-10', done:false},
-		{title:'B Task', text:'This is the B task', deadline:'2016-02-12', done:false}
+		{title:'Z Task', text:'This is the first task', deadline:'02/10/16', done:false},
+		{title:'A Task', text:'This is the middle task', deadline:'02/12/16', done:false},
+		{title:'J Task', text:'This is the last task', deadline:'02/15/16', done:false}
 	];
 
 	$scope.getTotalTodos = function () {
@@ -10,7 +11,7 @@ function TodoCtrl($scope) {
 	};
 
 	$scope.addTodo = function () {
-		if($scope.formTodoTitle != undefined && $scope.formTodoText != undefined) {
+		if($scope.checkForm()) {
 			$scope.todos.push({title:$scope.formTodoTitle, text:$scope.formTodoText, deadline:$scope.formTodoDeadline, done:false});
 			$scope.formTodoTitle = '';
 			$scope.formTodoText = '';
@@ -24,5 +25,23 @@ function TodoCtrl($scope) {
 
 	$scope.filterFunction = function(element) {
 		return element.name.match(/^Ma/) ? true : false;
+	};
+
+	$scope.checkForm = function() {
+    	// regular expression to match required date format
+    	re = /^\d{1,2}\/\d{1,2}\/\d{2}$/;
+    	if($scope.formTodoTitle == undefined && $scope.formTodoText == undefined) {
+    		window.alert("Title and/or description fields left empty");
+      		return false;
+    	}
+    	else if($scope.formTodoDeadline == undefined) {
+    		window.alert("Deadline left empty");
+    		return false;
+    	}
+    	else if(!$scope.formTodoDeadline.match(re)) {
+      		window.alert("Invalid date format (dd/mm/yy)");
+      		return false;
+    	}
+    	return true;
 	};
 }
